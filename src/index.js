@@ -5,22 +5,79 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import photos from './anime.json';
 import PhotoDisplay from './components/photoDisplay';
+var newGame = false;
+var randomArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 class Game extends React.Component{
     
-    state = {photos};
+    state = {photos,
+            score: 0};
+    //state = {score: 0};
     handleClick = (id, x) => {
+        
         //var photo = [false, false, false, false, false, false, false, false, false, false];
         document.getElementById("score").innerHTML = "Have a nice day!";
        // document.write(write[1]);        
+       var photo = this.state.photos.map(photo => {
+        if (photo.id === id) {
+          if (photo.selected === false) {
+            this.state.score += 1;  
+            photo.selected = true;
+            document.getElementById("score").innerHTML = "Score: " + this.state.score;
+            console.log(this.state.score);
+          } else {
+            document.getElementById("score").innerHTML = "Have a nice day, You lost! (Click an image to try again)";
+            newGame = true;
+          }
+        }
+        return photo;
+      });
+
+      if(this.state.score === 10){
+        newGame = true;
+      }
+      
+      if(newGame)
+      {
+        photo = this.state.photos.map(photo => {
+            photo.selected = false;
+            newGame = false;
+            return photo;
+          });
+        this.state.score = 0;
+      }
+      var index = 10;
+      var oldIndex = 0; 
+      var newIndex;
+      var secondIndex;
+
+      /*while(index != 0)
+      {
         
+        secondIndex = randomArray[oldIndex];
+        console.log("Second index"+ secondIndex);
+        newIndex = randomArray[index];
+        console.log("new index"+ newIndex);
+        randomArray[oldIndex] = newIndex;
+        randomArray[newIndex] = secondIndex;
+        index--;
+        oldIndex++;
         
+      }*/
+      
+      /*var x = 0;
+      photo = this.state.photos.map(photo => {
+        photo.id = randomArray[x];
+        x++;
+        return photo;
+      });
+      */
       }
       
 render(){
 return(
 <div className="Game">
-<div ><div id="score">Score:0</div>
+<div ><div id="score">Score: 0</div>
 <br></br>
     {this.state.photos.map(photo => (
         <PhotoDisplay
