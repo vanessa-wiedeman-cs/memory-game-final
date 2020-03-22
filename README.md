@@ -10,7 +10,7 @@
 
   - Uses React
   
-  - Uses JSON to hold an array of data
+  - Uses JSON to hold an array of data  
   
   - Uses JS
   
