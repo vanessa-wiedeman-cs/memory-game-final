@@ -1,6 +1,6 @@
 # Memory Game  
 
-- Project Goal:
+- Project Goal:   
 
   - Build a website that lets the user click images 1-10 (if you click the same image twice its game over try again!).
   
