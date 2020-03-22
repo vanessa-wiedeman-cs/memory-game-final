@@ -6,7 +6,7 @@
   
  Project link: https://vanessa-wiedeman-cs.github.io/memory-game-final/
  
-- Requirements:
+- Requirements:  
 
   - Uses React  
   
