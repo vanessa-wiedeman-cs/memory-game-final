@@ -8,7 +8,7 @@
  
 - Requirements:
 
-  - Uses React
+  - Uses React  
   
   - Uses JSON to hold an array of data  
   
