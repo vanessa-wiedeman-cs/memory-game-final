@@ -2,7 +2,7 @@
 
 - Project Goal:   
 
-  - Build a website that lets the user click images 1-10 (if you click the same image twice its game over try again!).
+  - Build a website that lets the user click images 1-10 (if you click the same image twice its game over try again!).  
   
  Project link: https://vanessa-wiedeman-cs.github.io/memory-game-final/
  
